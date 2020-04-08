@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="computer">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Computer Solutions</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- The justified navigation menu is meant for single line per list item.
+           Multiple lines will require custom code not provided by Bootstrap. -->
+      <div class="masthead">
+        <h3 class="text-muted">Computer Solutions</h3>
+        <nav>
+          <ul class="nav nav-justified">
+            <li><a href="#/index">Home</a></li>
+            <li><a href="#/about">About</a></li>
+            <li><a href="#/services">Services</a></li>
+            <li><a href="#/contacts">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div ng-controller="MainCtrl">
+        <div ng-view></div>
+      </div>
+
+      <!-- Site footer -->
+      <footer class="footer">
+        <p>&copy; 2016 Company, Inc.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  <script src="https://code.jquery.com/jquery-3.1.1.js"
+  	integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  	crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="newrelic.js"></script>
+  <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+  <script type="text/javascript">
+
+	$( document ).ready(function() {
+		$.get("http://ec2-3-85-51-95.compute-1.amazonaws.com", function( data ) {
+		  $(".footer").text( data );
+		});
+	});
+    
+    console.log(document.getElementById("hmmm").innerHTML); // This causes problems
+
+  </script>
+  </body>
+</html>
